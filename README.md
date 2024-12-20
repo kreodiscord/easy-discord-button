@@ -1,6 +1,7 @@
 # easy-discord-buttons
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Easy Discord Buttons](./assets/img.png)
 
 A simple and user-friendly package for creating Discord buttons with Discord.js.
 
@@ -20,38 +21,16 @@ npm install easy-discord-buttons
 ## 🚀 Usage
 
 ```javascript
-const { Client, GatewayIntentBits } = require('discord.js');
 const EasyDiscordButtons = require('easy-discord-buttons');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('interactionCreate', async (interaction) => {
-    if (!interaction.isButton()) return;
-
-    if (interaction.customId === 'example_button') {
-        await interaction.reply({ content: 'You clicked the button!' });
-    }
-});
-
-client.on('messageCreate', async (message) => {
-    if (message.content === '!button') {
-        const button = EasyDiscordButtons.createButton(
-            'Click Me', 
-            'example_button', 
-            'Primary'
-        );
-
-        const row = EasyDiscordButtons.createRow([button]);
-
-        await message.channel.send({ content: 'Here is your button:', components: [row] });
-    }
-});
-
-client.login('your-token-here');
+const primaryButton = EasyDiscordButtons.createButton(
+    "Click Me",        // Label
+    "example_id",      // Custom ID
+    "primary",         // Style (case-insensitive)
+    null,              // URL (not needed for non-Link styles)
+    false              // Disabled (optional, default: false)
+);
 
 ```
 
@@ -79,20 +58,24 @@ Creates a row of buttons.
 
 ## 🧑‍💻 Example for Multiple Buttons
 ```javascript
-const button1 = EasyDiscordButtons.createButton('Yes', 'yes_button', 'Success');
-const button2 = EasyDiscordButtons.createButton('No', 'no_button', 'Danger');
+const { createButton, createRow } = require('easy-discord-buttons');
 
-const row = EasyDiscordButtons.createRow([button1, button2]);
+// Create buttons
+const button1 = createButton("Primary", "btn_1", "primary");
+const button2 = createButton("Danger", "btn_2", "danger");
+const button3 = createButton("Visit Website", null, "link", "https://example.com");
 
-await message.channel.send({ content: 'Do you agree?', components: [row] });
+// Create a row with these buttons
+const actionRow = createRow([button1, button2, button3]);
 ```
 ## 🧑‍💻 Example for Link Buttons
 ```javascript
 const linkButton = EasyDiscordButtons.createButton(
-    'Package',
-    'package_link', 
-    'Link', 
-    'https://www.github.com/kreodiscord/easy-discord-buttons/readme.md'
+    "Visit Website",  // Label
+    null,             // No customId for Link buttons
+    "link",           // Style
+    "https://example.com", // URL
+    false             // Disabled (optional, default: false)
 );
 
 await message.channel.send({ content: 'Visit Easy-Discord-Buttons Package!:', components: [EasyDiscordButtons.createRow([linkButton])] });
