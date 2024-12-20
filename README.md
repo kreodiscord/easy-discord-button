@@ -1,6 +1,7 @@
 # easy-discord-buttons
 
 ![Easy Discord Buttons](./assets/img.png)
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A simple and user-friendly package for creating Discord buttons with Discord.js.
