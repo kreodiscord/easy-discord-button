@@ -1,0 +1,26 @@
+{
+  "name": "easy-discord-button",
+  "version": "1.0.0",
+  "description": "A simple and user-friendly package for creating Discord buttons with Discord.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kreodiscord/easy-discord-button.git"
+  },
+  "keywords": [
+    "discord",
+    "discord-buttons",
+    "discord.js",
+    "buttons",
+    "easy",
+    "user-friendly"
+  ],
+  "author": "kreodiscord",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
