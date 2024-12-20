@@ -55,7 +55,7 @@ client.login('your-token-here');
 
 ```
 
-# More
+# Create a Button
 ```javascript
 EasyDiscordButtons.createButton(label, customId, style, url = null, disabled = false)
 ```
@@ -67,6 +67,7 @@ Creates a Discord button easily.
 - url (optional): Required for Link buttons. The URL to redirect to.
 - disabled (optional): Whether the button is disabled.
 
+# Create a Row
 ```javascript
 EasyDiscordButtons.createRow(buttons)
 ```
