@@ -55,8 +55,8 @@ client.login('your-token-here');
 
 ```
 
-## Api
-# EasyDiscordButtons.createButton(label, customId, style, url = null, disabled = false)
+# More
+EasyDiscordButtons.createButton(label, customId, style, url = null, disabled = false)
 Creates a Discord button easily.
 
 - label: The text displayed on the button.
@@ -65,7 +65,7 @@ Creates a Discord button easily.
 - url (optional): Required for Link buttons. The URL to redirect to.
 - disabled (optional): Whether the button is disabled.
 
-# EasyDiscordButtons.createRow(buttons)
+EasyDiscordButtons.createRow(buttons)
 Creates a row of buttons.
 
 - buttons: An array of ButtonBuilder objects.
